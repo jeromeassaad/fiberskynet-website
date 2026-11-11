@@ -18,7 +18,7 @@ for name in ('index.html', 'styles.css', 'script.js', 'assets'):
         shutil.copytree(source, dest)
     else:
         shutil.copy2(source, dest)
-for name in ('packages', 'contact'):
+for name in ('packages', 'contact', 'toters-rush'):
     shutil.copytree(root / name, out / name)
 (out / '.nojekyll').write_text('')
 (out / '_redirects').write_text('/packages /packages/ 301\n/contact /contact/ 301\n')
