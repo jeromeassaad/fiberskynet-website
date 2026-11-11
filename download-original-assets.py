@@ -95,24 +95,9 @@ for name, path in images.items():
 if failed:
     raise SystemExit('ABORT: Required original images unavailable: ' + ', '.join(failed))
 
-# Exact header logo is publicly linked on the current Squarespace site.
-# Do not silently replace the official logo if it cannot be verified.
-logo_urls = [u for u in published if canonical_name(u) == 'shelter design-13.png']
-if logo_urls:
-    try:
-        logo = assets / 'logo-original.png'
-        logo.write_bytes(image_bytes(logo_urls[0]))
-        for target in (root / 'index.html', root / 'packages/index.html', root / 'contact/index.html'):
-            page = target.read_text()
-            # Replace the header icon only. White footer logo remains a
-            # vector approximation until its real white variant is supplied.
-            page = page.replace('assets/logo.svg', 'assets/original/logo-original.png')
-            target.write_text(page)
-        print('Original header logo downloaded and referenced.')
-    except Exception as exc:
-        print(f'WARNING: Could not download original logo: {exc}')
-else:
-    print('WARNING: Exact logo URL not found. Temporary SVG used for header.')
+# Official vector logo is supplied from the original Illustrator/PDF artwork.
+# Keep it unchanged rather than pulling a possibly outdated site logo.
+print('Using supplied official vector logo (header and footer).')
 
 for target in (root / 'styles.css', root / 'index.html', root / 'packages/index.html', root / 'contact/index.html'):
     page = target.read_text()

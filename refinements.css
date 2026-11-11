@@ -1,0 +1,96 @@
+/* FiberSkynet · restrained navigation and hero polish — November 2026.
+   This file is layered on the original theme so prices, links and content remain intact. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+body{font-family:'DM Sans',Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;font-optical-sizing:auto;}
+
+/* More considered, rounded navigation without changing destinations. */
+.announce{background:linear-gradient(105deg,#32117f 0%,#4c1cad 55%,#6422bf 100%);font-size:.76rem;letter-spacing:.015em;padding:10px 16px}
+.announce a{gap:9px;line-height:1.4}
+.site-header{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.96);border-bottom:1px solid rgba(69,47,113,.085);backdrop-filter:blur(20px) saturate(155%);-webkit-backdrop-filter:blur(20px) saturate(155%);transition:box-shadow .35s ease,background .35s ease}
+.site-header.is-scrolled{box-shadow:0 8px 30px rgba(28,12,73,.07);background:rgba(255,255,255,.94)}
+.header-row{min-height:88px;gap:24px}
+.brand{width:191px;display:flex;align-items:center;flex-shrink:0;}
+.brand img{width:100%;height:auto;object-fit:contain}
+.nav{display:flex;align-items:center;gap:2px;padding:5px;margin-left:auto;background:#f7f5fb;border:1px solid #ece7f2;border-radius:100px;box-shadow:0 1px 1px rgba(27,12,62,.025) inset}
+.nav>a,.nav .services-dropdown>summary{display:flex;align-items:center;justify-content:center;min-height:39px;padding:9px 13px;border-radius:100px;font-weight:700;font-size:.815rem;letter-spacing:-.008em;white-space:nowrap;color:#4b4260;transition:color .2s ease,background .2s ease,box-shadow .2s ease}
+.nav>a:hover,.nav .services-dropdown>summary:hover{color:#4522a2;background:rgba(255,255,255,.88)}
+.nav>a[aria-current=page]{color:#4520ad;background:#fff;box-shadow:0 1px 6px rgba(34,15,85,.09),0 1px 2px rgba(34,15,85,.05)}
+.nav>a[aria-current=page]:after{display:none}
+.nav .services-dropdown{font-size:inherit;color:inherit}
+.nav .services-dropdown>summary{list-style:none;cursor:pointer;gap:7px}
+.nav .services-dropdown>summary::-webkit-details-marker{display:none}
+.nav .services-dropdown[open]>summary{color:#4520ad;background:#fff;box-shadow:0 1px 6px rgba(34,15,85,.08)}
+.nav .services-dropdown-menu{top:calc(100% + 12px);left:-32px;width:270px;padding:9px;border:1px solid rgba(106,77,161,.14);background:rgba(255,255,255,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 16px 46px rgba(31,11,82,.12);border-radius:15px}
+.nav .services-dropdown-menu a{font-size:.81rem;min-height:42px;display:flex;align-items:center;padding:10px 13px!important;border-radius:9px;color:#403653;white-space:normal}
+.nav .services-dropdown-menu a:hover{background:#f4effe;color:#4420a9}
+.header-cta{margin-left:0}
+.header-cta .btn{border-radius:100px;min-height:46px;padding:11px 19px;background:linear-gradient(120deg,#311081 0%,#5524c2 100%);font-size:.84rem;letter-spacing:-.006em;box-shadow:0 7px 16px rgba(51,15,124,.16)}
+.header-cta .btn:hover{background:linear-gradient(120deg,#4116a3,#6a32db);box-shadow:0 10px 22px rgba(51,15,124,.2)}
+.menu-toggle{border-radius:12px;background:#f7f5fb}
+
+/* Original purple-and-blue photograph remains, but is quieter and drifts very slowly. */
+.hero{min-height:635px;background:#10072c;isolation:isolate;overflow:hidden;border-bottom:1px solid rgba(140,94,226,.22)}
+.hero:before{content:"";inset:-3%;z-index:-3;background:url('./assets/original/hero.png') center 54%/cover no-repeat;filter:brightness(.53) saturate(.66) contrast(.9) blur(1.6px);transform:scale(1.03);animation:fsn-hero-drift 26s ease-in-out infinite alternate;will-change:transform}
+.hero:after{content:"";position:absolute;z-index:-2;inset:0;width:auto;height:auto;background:linear-gradient(93deg,rgba(17,8,46,.91) 0%,rgba(23,10,62,.78) 43%,rgba(29,13,70,.39) 100%),radial-gradient(ellipse 70% 80% at 5% 45%,rgba(57,29,107,.23),transparent 75%);pointer-events:none}
+.hero-halo{position:absolute;z-index:-1;pointer-events:none;width:580px;height:580px;border-radius:50%;filter:blur(82px);opacity:.25;transform:translateZ(0)}
+.hero-halo-a{left:-280px;bottom:-410px;background:radial-gradient(circle,#7c56e7,transparent 70%);animation:fsn-halo-a 24s ease-in-out infinite alternate}
+.hero-halo-b{right:-280px;top:-380px;background:radial-gradient(circle,#3967e5,transparent 70%);opacity:.19;animation:fsn-halo-b 29s ease-in-out infinite alternate}
+.hero-inner{padding-top:96px;padding-bottom:91px;position:relative}
+.hero-copy{max-width:685px}
+.hero-label{font-size:.71rem;letter-spacing:.18em;color:#e6d9fa;font-weight:700}
+.hero-label:before{width:26px;background:#bb99e9}
+.hero h1{max-width:685px;margin:28px 0 22px;font-size:clamp(3.5rem,5.2vw,5.45rem);line-height:1.105;letter-spacing:-.056em;font-weight:700;color:#fff;text-wrap:balance;text-shadow:0 2px 24px rgba(6,0,30,.11)}
+.hero h1 span{color:#d7b5ff;font-weight:700}
+.hero-lead{font-size:1.065rem;font-weight:400;line-height:1.75;color:rgba(255,255,255,.84);letter-spacing:-.007em;max-width:552px}
+.hero-actions{margin-top:34px;gap:12px}
+.hero-actions .btn{position:relative;overflow:hidden;border-radius:14px;min-height:54px;padding:15px 23px;font-size:.91rem;font-weight:700;letter-spacing:-.01em;color:#fff;backdrop-filter:blur(20px) saturate(155%);-webkit-backdrop-filter:blur(20px) saturate(155%);box-shadow:0 12px 26px rgba(5,0,29,.16),inset 0 1px 0 rgba(255,255,255,.20);transition:transform .25s ease,border-color .25s ease,background .25s ease,box-shadow .25s ease}
+.hero-actions .btn-white{border-color:rgba(255,255,255,.51);background:linear-gradient(125deg,rgba(255,255,255,.31),rgba(214,190,255,.20));color:#fff}
+.hero-actions .btn-ghost{border-color:rgba(241,227,255,.28);background:linear-gradient(125deg,rgba(190,162,255,.13),rgba(83,58,144,.15));color:#fff}
+.hero-actions .btn:hover{transform:translateY(-3px);background:rgba(255,255,255,.30);border-color:rgba(255,255,255,.68);box-shadow:0 15px 38px rgba(5,0,29,.25),inset 0 1px 0 rgba(255,255,255,.33)}
+.hero-actions .btn:active{transform:translateY(-1px)}
+.hero-actions .btn .arrow{transition:transform .25s ease}
+.hero-actions .btn:hover .arrow{transform:translate(2px,-1px)}
+.hero-meta{margin-top:49px;display:inline-flex;align-items:center;gap:0;flex-wrap:wrap;padding:12px 17px;border:1px solid rgba(255,255,255,.12);border-radius:13px;background:rgba(255,255,255,.055);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);font-size:.76rem;font-weight:600;color:rgba(255,255,255,.83);box-shadow:0 4px 18px rgba(10,0,28,.05)}
+.hero-meta span{display:flex;align-items:center;gap:8px;padding:0 14px;border-right:1px solid rgba(255,255,255,.16)}
+.hero-meta span:first-child{padding-left:0}
+.hero-meta span:last-child{padding-right:0;border-right:0}
+.hero-meta svg{color:#d1b4ff;width:14px;height:14px}
+@keyframes fsn-hero-drift{0%{transform:scale(1.03) translate3d(0,0,0)}100%{transform:scale(1.095) translate3d(-.9%,.7%,0)}}
+@keyframes fsn-halo-a{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(105px,-40px,0)}}
+@keyframes fsn-halo-b{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-115px,80px,0)}}
+/* The visual system carries through to the subpage hero areas. */
+.inner-hero:before{filter:saturate(.75) brightness(.84)}
+@media(max-width:1050px){.nav{gap:0}.nav>a,.nav .services-dropdown>summary{padding:9px 10px}.header-row{gap:15px}.brand{width:175px}.header-cta .btn{padding:11px 14px}}
+@media(max-width:940px){
+  .wrap{padding-left:24px;padding-right:24px}
+  .header-row{min-height:75px}
+  .brand{width:174px}
+  .menu-toggle{display:flex;margin-left:auto;border-radius:12px}
+  .header-cta{margin-left:auto}
+  .header-cta .btn{display:inline-flex}
+  .nav{position:absolute;display:none;top:calc(100% + 7px);left:15px;right:15px;width:auto;max-height:calc(100vh - 120px);overflow-y:auto;z-index:90;border-radius:17px;padding:10px;box-shadow:0 16px 38px rgba(37,15,75,.18);flex-direction:column;align-items:stretch;gap:3px;background:rgba(255,255,255,.98)}
+  .nav.open{display:flex}
+  .nav>a,.nav .services-dropdown>summary{justify-content:flex-start;width:100%;border-radius:10px;min-height:43px;padding:12px 14px;font-size:.9rem}
+  .nav .services-dropdown{width:100%}
+  .nav .services-dropdown>summary{justify-content:space-between}
+  .nav .services-dropdown-menu{position:static;width:100%;box-shadow:none;border-radius:11px;margin:3px 0 8px;background:#f9f7fd}
+}
+@media(max-width:620px){
+  .header-row{min-height:70px;gap:10px}
+  .brand{width:155px}
+  .header-cta{margin-left:auto}
+  .header-cta .btn{display:none}
+  .menu-toggle{margin-left:auto}
+  .hero{min-height:585px}
+  .hero:before{inset:-8%;background-position:62% center;filter:brightness(.51) saturate(.58) contrast(.88) blur(1.8px)}
+  .hero:after{background:linear-gradient(90deg,rgba(16,7,45,.89),rgba(18,9,52,.78) 66%,rgba(27,12,64,.62))}
+  .hero-inner{padding-top:88px;padding-bottom:80px}
+  .hero h1{font-size:clamp(3.1rem,10.2vw,4.6rem);letter-spacing:-.05em;line-height:1.08}
+  .hero-lead{font-size:.98rem;line-height:1.68}
+  .hero-actions .btn{width:100%;justify-content:space-between;border-radius:13px;min-height:53px}
+  .hero-meta{display:flex;margin-top:39px;gap:11px;padding:14px 15px}
+  .hero-meta span{padding:0;border-right:0;font-size:.71rem}
+  .hero-meta svg{width:13px;height:13px}
+}
+@media(prefers-reduced-motion:reduce){.hero:before,.hero-halo{animation:none!important}.site-header,.nav>a,.nav .services-dropdown>summary,.hero-actions .btn{transition:none!important}}

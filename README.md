@@ -60,7 +60,7 @@ The build step must successfully download the images from the live Squarespace
 site to the local `assets/original/` folder before the public preview is served.
 Do **not** point the preview domain to the live FiberSkynet domain.
 
-The current header SVG logo is still an approximation until the exact original
-`Shelter Design-13.png` logo asset is exported. The downloader below attempts
-to discover the official logo dynamically from the live homepage. Review its
-result manually before switching production DNS.
+The official FiberSkynet vector logo was extracted from the brand-provided
+Illustrator PDF and installed for the site header, footer and favicon. The
+site uses `refinements.css` for a quieter animated hero, glass buttons, and
+refined navigation. The animation respects reduced-motion preferences.
