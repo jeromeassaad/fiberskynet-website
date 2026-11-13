@@ -29,6 +29,8 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: dist
+      - name: Allow Pages artifact to become available
+        run: sleep 25
       - name: Deploy static preview
         id: deployment
         uses: actions/deploy-pages@v4
