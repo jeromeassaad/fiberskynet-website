@@ -168,3 +168,31 @@ body{font-family:'DM Sans',Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Ari
 @media(prefers-reduced-motion:reduce){
   .hero .connectivity-visual{opacity:.64}
 }
+
+
+/* V6 — editorial radial connectivity artwork, tuned to the supplied reference. */
+.hero .connectivity-visual{
+  width:min(43vw,640px);
+  height:min(515px,81%);
+  right:max(10px,3.2vw);
+  opacity:.84;
+  -webkit-mask-image:radial-gradient(ellipse 80% 78% at 53% 50%,#000 39%,rgba(0,0,0,.88) 70%,transparent 100%);
+  mask-image:radial-gradient(ellipse 80% 78% at 53% 50%,#000 39%,rgba(0,0,0,.88) 70%,transparent 100%);
+}
+.hero .connectivity-visual:before{
+  inset:13%;
+  background:radial-gradient(ellipse at 53% 50%,rgba(111,91,223,.085),transparent 60%);
+  filter:blur(32px);
+}
+@media(max-width:1120px){
+  .hero .connectivity-visual{width:min(51vw,590px);right:-1%;opacity:.72}
+}
+@media(max-width:940px){
+  .hero .connectivity-visual{width:min(57vw,520px);right:-12%;opacity:.42}
+}
+@media(max-width:620px){
+  .hero .connectivity-visual{width:90vw;height:64%;right:-38%;top:50%;opacity:.25}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero .connectivity-visual{opacity:.73}
+}
