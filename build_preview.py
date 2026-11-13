@@ -24,3 +24,15 @@ for name in ('packages', 'contact'):
 (out / '.nojekyll').write_text('')
 (out / '_redirects').write_text('/packages /packages/ 301\n/contact /contact/ 301\n')
 print(f'Built website at {out} — {sum(f.is_file() for f in out.rglob("*"))} files')
+
+
+# Version static assets with the commit SHA to prevent outdated CSS/JS from
+# persisting across GitHub Pages deployments. Works for root and nested pages.
+import os
+import re
+version=(os.getenv("GITHUB_SHA") or "local").strip()[:12]
+for html_file in (out / "index.html", out / "packages/index.html", out / "contact/index.html"):
+    page=html_file.read_text(encoding="utf-8")
+    page=re.sub(r'(refinements\.css)(?:\?v=[A-Za-z0-9._-]+)?',lambda m:m.group(1)+"?v="+version,page)
+    html_file.write_text(page,encoding="utf-8")
+print(f"Cache-busted CSS: v={version}")

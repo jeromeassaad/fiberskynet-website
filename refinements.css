@@ -625,3 +625,45 @@ body{font-family:'DM Sans',Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Ari
   .steps{padding:52px 0 64px}
   .steps-head h2{font-size:1.8rem}
 }
+
+
+/* V11 — firm viewport alignment and clearer proportions for the following section.
+   Narrow viewport fallback retains a natural document flow. */
+@media (min-width:981px) and (min-height:640px){
+  .advantage-section{
+    min-height:calc(100svh - 89px);
+    border-bottom:0;
+    display:flex;
+    align-items:center;
+  }
+}
+.steps{
+  border-top:0;
+  padding:clamp(88px,10vh,120px) 0 clamp(95px,11vh,138px);
+}
+.steps-head{margin-bottom:39px}
+.steps-grid{gap:22px}
+.step{
+  min-height:178px;
+  padding:37px 30px;
+  border-radius:18px;
+  align-items:center;
+  gap:21px;
+}
+.step-number{width:56px;height:56px;font-size:.93rem}
+.step h3{font-size:1.12rem;margin-bottom:9px}
+.step p{font-size:.88rem}
+@media(max-width:980px){
+  .steps{padding:73px 0 86px}
+  .steps-grid{gap:13px}
+  .step{min-height:145px;padding:23px 19px;gap:14px}
+  .step-number{width:44px;height:44px}
+}
+@media(max-width:740px){
+  .steps{padding:60px 0 75px}
+  .step{min-height:120px;padding:23px}
+}
+@media(max-width:480px){
+  .steps{padding:56px 0 65px}
+  .step{min-height:110px}
+}
