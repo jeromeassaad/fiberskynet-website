@@ -667,3 +667,213 @@ body{font-family:'DM Sans',Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Ari
   .steps{padding:56px 0 65px}
   .step{min-height:110px}
 }
+
+
+/* V12 — Cablevision+ editorial full-viewport feature.
+   Retains the live entertainment offers, existing photograph and WhatsApp link. */
+.cablevision.cablevision-premium{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:minmax(0,47%) minmax(0,53%);
+  background:#111039;
+  color:#fff;
+  border:0;
+  min-height:690px;
+}
+.cablevision-premium .cablevision-copy{
+  position:relative;
+  z-index:1;
+  align-self:center;
+  justify-self:end;
+  width:100%;
+  max-width:610px;
+  padding:clamp(55px,7vh,104px) clamp(30px,5vw,90px) clamp(55px,7vh,104px) max(30px,calc((100vw - 1176px)/2 + 30px));
+  background:
+    radial-gradient(ellipse 77% 58% at 0% 85%,rgba(100,60,210,.13),transparent 80%),
+    linear-gradient(115deg,#141141 0%,#15143f 75%,#16143e 100%);
+}
+.cablevision-premium .cablevision-topline{
+  display:flex;
+  gap:13px;
+  align-items:center;
+  margin-bottom:19px;
+}
+.cablevision-premium .cablevision-marker{
+  display:block;width:28px;height:2px;
+  background:#b9a5f4;
+  border-radius:4px;
+}
+.cablevision-premium .eyebrow{color:#d0b9ff;letter-spacing:.20em;font-size:.68rem}
+.cablevision-premium h2{
+  margin:0 0 25px;
+  font-size:clamp(3.9rem,5.9vw,6rem);
+  letter-spacing:-.068em;
+  font-weight:750;
+  line-height:1;
+  white-space:nowrap;
+  color:#fff;
+}
+.cablevision-premium h2 span{color:#cda9ff}
+.cablevision-premium h3{
+  font-weight:620;
+  font-size:clamp(1.30rem,1.9vw,1.72rem);
+  line-height:1.37;
+  letter-spacing:-.034em;
+  margin:0 0 18px;
+}
+.cablevision-premium h3 span{color:#cdb5ff}
+.cablevision-premium .cablevision-description{
+  color:rgba(245,242,255,.73);
+  line-height:1.65;
+  font-size:.96rem;
+  max-width:370px;
+  margin:0 0 30px;
+}
+.cablevision-premium .cablevision-offers{
+  display:flex;
+  align-items:stretch;
+  flex-wrap:wrap;
+  gap:11px;
+  margin:0 0 32px;
+}
+.cablevision-premium .cablevision-rate,
+.cablevision-premium .cablevision-promo{
+  border:1px solid rgba(209,194,255,.2);
+  border-radius:15px;
+  padding:15px 18px;
+  background:rgba(255,255,255,.06);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+  -webkit-backdrop-filter:blur(13px);
+  backdrop-filter:blur(13px);
+}
+.cablevision-premium .cablevision-rate{min-width:155px}
+.cablevision-premium .cablevision-small{
+  display:block;color:#c9bde3;font-size:.58rem;
+  font-weight:780;letter-spacing:.13em;margin-bottom:4px;
+}
+.cablevision-premium .cablevision-amount{display:flex;align-items:baseline;gap:6px}
+.cablevision-premium .cablevision-amount strong{
+  font-weight:800;letter-spacing:-.06em;line-height:1;
+  color:#fff;font-size:2.2rem;
+}
+.cablevision-premium .cablevision-amount span{color:#c6badf;font-size:.74rem}
+.cablevision-premium .cablevision-promo{
+  display:flex;align-items:center;gap:12px;min-width:193px;
+}
+.cablevision-premium .cablevision-promo-icon{
+  flex:none;width:31px;height:31px;border-radius:50%;
+  display:grid;place-items:center;background:rgba(170,141,255,.19);
+  color:#dfc9ff;font-size:.86rem;
+}
+.cablevision-premium .cablevision-promo strong{
+  display:block;font-size:.89rem;color:#fff;margin-bottom:4px;
+}
+.cablevision-premium .cablevision-promo span:last-child{
+  display:block;font-size:.68rem;color:#c6badf;
+}
+.cablevision-premium .cablevision-actions{
+  margin:0;display:flex;align-items:center;flex-wrap:wrap;gap:18px 23px;
+}
+.cablevision-premium .cablevision-actions .btn{
+  background:linear-gradient(125deg,#fff,#ece4ff);
+  border:1px solid rgba(255,255,255,.7);
+  color:#32136f;
+  border-radius:999px;
+  font-size:.89rem;
+  font-weight:750;
+  padding:15px 25px;
+  min-height:52px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+.cablevision-premium .cablevision-actions .btn:hover{
+  background:#fff;
+  transform:translateY(-2px);
+  box-shadow:0 13px 26px rgba(0,0,0,.22);
+}
+.cablevision-premium .cablevision-secondary{
+  color:#e8defc;font-weight:680;font-size:.8rem;
+  text-decoration:none;border-bottom:1px solid rgba(232,222,252,.42);
+  padding-bottom:5px;transition:border-color .2s ease,color .2s ease;
+}
+.cablevision-premium .cablevision-secondary:hover{
+  border-color:#fff;color:#fff;
+}
+.cablevision-premium .cablevision-image{
+  position:relative;
+  height:auto;
+  min-height:100%;
+  max-height:none;
+  overflow:hidden;
+  background:#171746;
+}
+.cablevision-premium .cablevision-image img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:48% 50%;
+  filter:brightness(.91) saturate(.89) contrast(1.05);
+}
+.cablevision-premium .cablevision-image::after{
+  position:absolute;z-index:1;inset:0;
+  background:
+    linear-gradient(90deg,rgba(21,20,62,.72) 0%,rgba(21,20,62,.15) 21%,transparent 45%),
+    linear-gradient(0deg,rgba(19,15,57,.38),transparent 33%,transparent 76%,rgba(17,16,55,.12));
+}
+.cablevision-premium .cablevision-image-glow{
+  position:absolute;z-index:2;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 63% 60%,transparent 20%,rgba(30,24,80,.08) 82%);
+}
+@media(min-width:941px) and (min-height:600px){
+  .cablevision.cablevision-premium{
+    min-height:calc(100vh - 89px);
+    min-height:calc(100svh - 89px);
+  }
+}
+@media(max-width:1140px) and (min-width:941px){
+  .cablevision-premium .cablevision-copy{
+    padding-left:clamp(24px,3vw,55px);
+    padding-right:30px;
+  }
+  .cablevision-premium h2{font-size:clamp(3.3rem,5.5vw,4.8rem)}
+  .cablevision-premium .cablevision-offers{gap:8px}
+  .cablevision-premium .cablevision-rate,
+  .cablevision-premium .cablevision-promo{padding:12px}
+}
+@media(max-width:940px){
+  .cablevision.cablevision-premium{
+    display:grid;grid-template-columns:1fr;min-height:0;
+  }
+  .cablevision-premium .cablevision-copy{
+    justify-self:stretch;max-width:none;
+    padding:clamp(57px,8vw,78px) 27px 58px;
+  }
+  .cablevision-premium h2{
+    font-size:clamp(3.4rem,8vw,5.3rem);
+    margin-bottom:23px;
+  }
+  .cablevision-premium .cablevision-image{
+    min-height:390px;height:390px;max-height:none;
+  }
+  .cablevision-premium .cablevision-image img{object-position:center 43%}
+  .cablevision-premium .cablevision-image::after{
+    background:linear-gradient(180deg,rgba(19,18,57,.34),transparent 25%,rgba(16,14,57,.06) 85%);
+  }
+}
+@media(max-width:580px){
+  .cablevision-premium .cablevision-copy{padding:56px 22px 52px}
+  .cablevision-premium h2{font-size:clamp(3.05rem,12vw,4.25rem)}
+  .cablevision-premium h3{font-size:1.36rem}
+  .cablevision-premium .cablevision-offers{gap:10px;margin-bottom:26px}
+  .cablevision-premium .cablevision-rate,
+  .cablevision-premium .cablevision-promo{padding:13px 15px}
+  .cablevision-premium .cablevision-promo{min-width:190px}
+  .cablevision-premium .cablevision-image{height:300px;min-height:300px}
+}
+@media(prefers-reduced-motion:reduce){
+  .cablevision-premium .cablevision-actions .btn,
+  .cablevision-premium .cablevision-secondary{transition:none!important}
+}
