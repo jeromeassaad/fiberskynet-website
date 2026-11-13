@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
+      - name: Install image enhancement dependency
+        run: python3 -m pip install --disable-pip-version-check "Pillow==11.3.0"
       - name: Download original imagery and build site
         run: python3 build_preview.py
       - name: Configure GitHub Pages

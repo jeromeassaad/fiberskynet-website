@@ -7,6 +7,7 @@ import sys
 
 root = Path(__file__).resolve().parent
 subprocess.run([sys.executable, str(root / 'download-original-assets.py')], check=True)
+subprocess.run([sys.executable, str(root / 'enhance_hero_asset.py')], check=True)
 out = root / 'dist'
 if out.exists():
     shutil.rmtree(out)

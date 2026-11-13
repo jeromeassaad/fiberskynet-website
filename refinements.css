@@ -265,3 +265,44 @@ body{font-family:'DM Sans',Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Ari
 @media(prefers-reduced-motion:reduce){
   .hero .fiber-crew-visual,.hero .fiber-crew-visual::after{animation:none!important;}
 }
+
+
+/* V8 — sharper, double-resolution fiber illustration and cleaner copy separation.
+   Preserve the original image's transparency, without fractional float animation. */
+.hero .fiber-crew-visual{
+  right:-3.7vw;
+  top:51%;
+  width:min(57vw,880px);
+  height:min(630px,100%);
+  opacity:1;
+  filter:drop-shadow(0 13px 28px rgba(91,72,204,.11));
+  animation:none;
+}
+.hero .fiber-crew-visual img{
+  image-rendering:auto;
+  object-fit:contain;
+  object-position:right center;
+}
+@media(max-width:1170px){
+  .hero .fiber-crew-visual{
+    right:-11vw;
+    width:min(63vw,820px);
+    opacity:.88;
+  }
+}
+@media(max-width:940px){
+  .hero .fiber-crew-visual{
+    right:-23vw;
+    width:74vw;
+    opacity:.42;
+  }
+}
+@media(max-width:620px){
+  .hero .fiber-crew-visual{
+    right:-53vw;
+    top:48%;
+    width:128vw;
+    height:70%;
+    opacity:.25;
+  }
+}
