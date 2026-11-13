@@ -708,7 +708,7 @@ body{font-family:'DM Sans',Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Ari
 .cablevision-premium .eyebrow{color:#d0b9ff;letter-spacing:.20em;font-size:.68rem}
 .cablevision-premium h2{
   margin:0 0 25px;
-  font-size:clamp(3.9rem,5.9vw,6rem);
+  font-size:clamp(3.55rem,5vw,5.1rem);
   letter-spacing:-.068em;
   font-weight:750;
   line-height:1;
