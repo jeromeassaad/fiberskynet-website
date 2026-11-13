@@ -196,3 +196,72 @@ body{font-family:'DM Sans',Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Ari
 @media(prefers-reduced-motion:reduce){
   .hero .connectivity-visual{opacity:.73}
 }
+
+
+/* V7 — cinematic fiber-optic technicians illustration. */
+.hero .fiber-crew-visual{
+  position:absolute;
+  z-index:0;
+  pointer-events:none;
+  top:51%;
+  right:-1.8vw;
+  width:min(60vw,910px);
+  height:min(645px,100%);
+  transform:translate3d(0,-50%,0);
+  opacity:.97;
+  filter:drop-shadow(0 16px 48px rgba(86,67,200,.16));
+  animation:fsn-fiber-float 13s ease-in-out infinite;
+}
+.hero .fiber-crew-visual img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:right center;
+  -webkit-user-select:none;
+  user-select:none;
+}
+.hero .fiber-crew-visual::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse 23% 19% at 52% 48%,rgba(157,157,255,.11),transparent 75%);
+  mix-blend-mode:screen;
+  opacity:.35;
+  animation:fsn-fiber-shimmer 7s ease-in-out infinite;
+}
+@keyframes fsn-fiber-float{
+  0%,100%{transform:translate3d(0,-50%,0)}
+  50%{transform:translate3d(0,calc(-50% - 6px),0)}
+}
+@keyframes fsn-fiber-shimmer{
+  0%,100%{opacity:.24}
+  50%{opacity:.62}
+}
+@media(max-width:1170px){
+  .hero .fiber-crew-visual{
+    right:-9vw;
+    width:min(67vw,860px);
+    opacity:.83;
+  }
+}
+@media(max-width:940px){
+  .hero .fiber-crew-visual{
+    right:-21vw;
+    width:77vw;
+    opacity:.42;
+    filter:drop-shadow(0 8px 18px rgba(70,53,190,.1));
+  }
+}
+@media(max-width:620px){
+  .hero .fiber-crew-visual{
+    right:-53vw;
+    top:48%;
+    width:128vw;
+    height:70%;
+    opacity:.25;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .hero .fiber-crew-visual,.hero .fiber-crew-visual::after{animation:none!important;}
+}
