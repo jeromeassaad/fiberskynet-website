@@ -1445,3 +1445,115 @@ body{font-family:'DM Sans',Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Ari
   .speed-premium-action{transition:none!important}
   .speed-premium-action:hover{transform:none!important}
 }
+
+
+/* V32 — refined standalone promotional CTA. Original link and fiber artwork
+   retained; richer editorial typography, quieter backdrop and a glass CTA. */
+.wide-cta.cta-premium{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  text-align:center;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  min-height:clamp(405px,52svh,520px);
+  background:
+    radial-gradient(ellipse at 74% 48%,rgba(89,79,210,.23),transparent 53%),
+    linear-gradient(105deg,#160739,#17104F 55%,#0D1C62);
+}
+.wide-cta.cta-premium::before{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background:
+    linear-gradient(90deg,rgba(20,8,67,.88) 0%,rgba(18,10,78,.76) 45%,rgba(8,18,71,.57) 100%),
+    url('./assets/original/cta.png') 53% center/cover no-repeat;
+  filter:saturate(.89);
+  opacity:.92;
+}
+.wide-cta.cta-premium::after{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse 45% 75% at 50% 40%,rgba(42,15,116,.19),transparent 100%),
+    linear-gradient(180deg,rgba(10,6,45,.18),transparent 26%,transparent 77%,rgba(11,7,50,.25));
+}
+.cta-premium-glow{
+  position:absolute;z-index:-1;left:50%;top:40%;transform:translate(-50%,-50%);
+  height:290px;width:min(760px,90vw);pointer-events:none;
+  border-radius:50%;
+  background:radial-gradient(ellipse,rgba(101,69,215,.18),transparent 70%);
+  filter:blur(37px);
+}
+.wide-cta.cta-premium .cta-premium-inner{
+  position:relative;z-index:1;width:100%;
+  padding-top:clamp(58px,7.3vh,83px);
+  padding-bottom:clamp(58px,7.3vh,83px);
+}
+.cta-premium-eyebrow{
+  display:flex;align-items:center;justify-content:center;gap:13px;
+  color:#dfceff;font-size:.69rem;letter-spacing:.19em;font-weight:800;
+  margin:0 0 24px;
+}
+.cta-premium-eyebrow>span{
+  display:block;width:25px;height:2px;flex:none;border-radius:5px;
+  background:rgba(211,172,255,.83);
+}
+.wide-cta.cta-premium h2{
+  color:#fff;
+  font-size:clamp(2.6rem,4.7vw,4.9rem);
+  letter-spacing:-.062em;line-height:1.065;font-weight:760;
+  max-width:870px;
+  text-wrap:balance;
+  margin:0 auto 23px;
+}
+.wide-cta.cta-premium h2 span{color:#d3b4ff}
+.wide-cta.cta-premium p{
+  max-width:630px;margin:0 auto 29px;
+  color:rgba(245,237,255,.85);
+  font-size:clamp(.91rem,1.13vw,1.03rem);line-height:1.73;
+}
+.wide-cta.cta-premium .cta-premium-button{
+  display:inline-flex;align-items:center;justify-content:center;gap:24px;
+  border:1px solid rgba(255,255,255,.65);
+  border-radius:999px;
+  padding:14px 25px;min-height:54px;
+  font-weight:760;font-size:.89rem;
+  letter-spacing:-.01em;
+  color:#fff;
+  background:linear-gradient(120deg,rgba(255,255,255,.24),rgba(202,174,250,.16));
+  box-shadow:0 12px 32px rgba(9,3,40,.24),inset 0 1px 0 rgba(255,255,255,.20);
+  backdrop-filter:blur(16px) saturate(150%);
+  -webkit-backdrop-filter:blur(16px) saturate(150%);
+  transition:transform .2s ease,background .2s ease,box-shadow .2s ease;
+}
+.wide-cta.cta-premium .cta-premium-button:hover{
+  transform:translateY(-2px);
+  background:linear-gradient(120deg,rgba(255,255,255,.34),rgba(210,188,255,.23));
+  box-shadow:0 16px 36px rgba(9,3,40,.32),inset 0 1px 0 rgba(255,255,255,.30);
+}
+.cta-premium-button .arrow{font-size:1.18rem;transition:transform .2s ease}
+.cta-premium-button:hover .arrow{transform:translate(2px,-1px)}
+.cta-premium-detail{
+  display:flex;align-items:center;justify-content:center;gap:11px;
+  color:rgba(237,229,255,.76);
+  font-size:.72rem;font-weight:600;letter-spacing:.005em;
+  margin-top:24px;
+}
+.cta-premium-detail-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:#b9a2ff;box-shadow:0 0 10px rgba(209,173,255,.65);
+}
+.cta-premium-separator{height:16px;width:1px;background:rgba(220,200,255,.33);margin:0 3px}
+@media(max-width:650px){
+  .wide-cta.cta-premium{min-height:405px}
+  .wide-cta.cta-premium .cta-premium-inner{padding-top:65px;padding-bottom:65px}
+  .wide-cta.cta-premium h2{font-size:clamp(2.5rem,8.8vw,3.8rem)}
+  .cta-premium-eyebrow{font-size:.61rem;letter-spacing:.12em;gap:8px}
+  .cta-premium-eyebrow>span{width:16px}
+  .wide-cta.cta-premium .cta-premium-button{width:100%;justify-content:space-between}
+  .cta-premium-detail{flex-wrap:wrap;font-size:.67rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .wide-cta.cta-premium .cta-premium-button,
+  .cta-premium-button .arrow{transition:none!important}
+  .wide-cta.cta-premium .cta-premium-button:hover,
+  .cta-premium-button:hover .arrow{transform:none!important}
+}
