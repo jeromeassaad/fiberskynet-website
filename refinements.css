@@ -1602,3 +1602,24 @@ button.btn,
   .fsn-chat-root,
   .fsn-chat-root.fsn-chat-under-footer{transition:none!important}
 }
+
+
+/* V35 — full-bleed Cablevision copy background, no inset frame.
+   The gradient belongs to the entire left grid column, never the smaller,
+   vertically centered text box. Preserves original text padding and image. */
+@media(min-width:941px){
+  .cablevision.cablevision-premium::before{
+    content:"";
+    position:absolute;
+    z-index:0;
+    inset:0 auto 0 0;
+    width:47%;
+    pointer-events:none;
+    background:
+      radial-gradient(ellipse 77% 58% at 0% 85%,rgba(100,60,210,.13),transparent 80%),
+      linear-gradient(115deg,#141141 0%,#15143f 75%,#16143e 100%);
+  }
+  .cablevision-premium .cablevision-copy{
+    background:transparent;
+  }
+}
