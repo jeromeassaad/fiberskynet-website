@@ -74,3 +74,30 @@
     }
   });
 })();
+
+
+/* V20 — align floating chat with the visible Request Setup CTA.
+   ResizeObserver handles responsive header changes without assuming widths. */
+(()=>{
+  const chat=document.getElementById('fsn-chat-root');
+  const request=document.querySelector('.header-cta .btn');
+  if(!chat||!request)return;
+  const sync=()=>{
+    const visible=request.getClientRects().length>0 && getComputedStyle(request).display!=='none';
+    if(!visible || window.innerWidth<=560){
+      chat.style.removeProperty('--fsn-chat-aligned-right');
+      return;
+    }
+    const rect=request.getBoundingClientRect();
+    const aligned=Math.max(14,Math.round(document.documentElement.clientWidth-rect.right));
+    chat.style.setProperty('--fsn-chat-aligned-right',aligned+'px');
+  };
+  sync();
+  window.addEventListener('resize',sync,{passive:true});
+  if('ResizeObserver' in window){
+    const observer=new ResizeObserver(sync);
+    observer.observe(request);
+    const header=document.querySelector('.header-row');
+    if(header)observer.observe(header);
+  }
+})();
