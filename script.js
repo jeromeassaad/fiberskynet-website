@@ -40,7 +40,7 @@
       '</div>',
     '</section>',
     '<button type="button" class="fsn-chat-toggle" aria-controls="fsn-chat-panel" aria-expanded="false" aria-label="Open FiberSkynet support">',
-      '<span class="fsn-chat-toggle-bubble">'+bubble+'</span><span class="fsn-chat-toggle-label">Chat with us</span>',
+      '<span class="fsn-chat-toggle-bubble">'+bubble+'</span><span class="fsn-chat-toggle-label">Chat</span>',
       '<span class="fsn-chat-toggle-x" aria-hidden="true">×</span>',
     '</button>'
   ];
