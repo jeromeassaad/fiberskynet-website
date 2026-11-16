@@ -3,9 +3,23 @@
 .pkg-hero{
  position:relative;isolation:isolate;overflow:hidden;min-height:clamp(400px,59svh,620px);
  display:flex;align-items:center;color:#fff;
- background:radial-gradient(ellipse at 90% 5%,rgba(103,59,204,.37),transparent 54%),linear-gradient(110deg,#17083f,#1a0a4e 53%,#16185b);
+ background:
+  radial-gradient(ellipse at 78% 54%,rgba(95,83,207,.23),transparent 45%),
+  radial-gradient(ellipse at 9% 0%,rgba(72,56,144,.19),transparent 58%),
+  linear-gradient(113deg,#0c102c 0%,#121437 40%,#191548 72%,#25205b 100%);
 }
-.pkg-hero:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(18,6,57,.86),rgba(18,7,65,.43)),url('../assets/original/hero.png') center / cover;opacity:.48}
+.pkg-hero:before{
+ content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;
+ background:
+  linear-gradient(90deg,rgba(163,161,247,.13) 1px,transparent 1px),
+  linear-gradient(0deg,rgba(163,161,247,.12) 1px,transparent 1px),
+  radial-gradient(circle at 74% 45%,rgba(182,185,255,.18) 1.2px,transparent 2.5px);
+ background-size:66px 66px,66px 66px,84px 84px;
+ background-position:18px 25px,18px 25px,0 0;
+ opacity:.47;
+ -webkit-mask-image:linear-gradient(90deg,transparent 19%,rgba(0,0,0,.17) 44%,#000 88%);
+ mask-image:linear-gradient(90deg,transparent 19%,rgba(0,0,0,.17) 44%,#000 88%);
+}
 .pkg-hero-layout{width:100%;display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:30px;align-items:center;padding-top:74px;padding-bottom:76px}
 .pkg-hero-copy{position:relative;z-index:2}
 .pkg-hero-kicker{font-size:.67rem;font-weight:800;letter-spacing:.17em;color:#d4bdf8;margin-bottom:22px}
@@ -24,7 +38,12 @@
 .pkg-hero-art{height:clamp(270px,34vw,460px);position:relative;min-width:0;pointer-events:none}
 .pkg-orbit{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border:1px solid rgba(191,169,248,.14);border-radius:50%;aspect-ratio:1}
 .pkg-orbit-one{width:85%}.pkg-orbit-two{width:62%;border-color:rgba(156,198,255,.16)}
-.pkg-hero-art:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(158,85,235,.21),transparent 59%),linear-gradient(155deg,transparent 42%,rgba(150,103,246,.14) 45%,transparent 50%,rgba(103,169,255,.14) 54%,transparent 58%)}
+.pkg-hero-art:before{
+ content:"";position:absolute;inset:0;pointer-events:none;
+ background:
+  radial-gradient(circle at 51% 51%,rgba(145,119,231,.16),transparent 49%),
+  radial-gradient(circle at 51% 51%,transparent 26%,rgba(161,147,240,.09) 26.15%,transparent 26.55%,transparent 38%,rgba(151,160,242,.07) 38.15%,transparent 38.55%);
+}
 .pkg-glass{position:absolute;display:flex;flex-direction:column;gap:7px;min-width:177px;padding:18px 22px;border:1px solid rgba(217,195,255,.23);border-radius:17px;background:radial-gradient(circle at 100% 0,rgba(144,108,228,.25),transparent 60%),rgba(25,17,82,.80);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 20px 48px rgba(6,1,30,.22),inset 0 1px 0 rgba(255,255,255,.10)}
 .pkg-glass span{color:#d6c2f6;font-size:.60rem;font-weight:800;letter-spacing:.14em}
 .pkg-glass strong{color:#fff;line-height:1.05;font-size:2.28rem;letter-spacing:-.055em}
@@ -84,4 +103,36 @@
     min-height:calc(100vh - var(--pkg-header-stack,134px));
     min-height:calc(100svh - var(--pkg-header-stack,134px));
   }
+}
+
+
+/* V28 — Packages-only orbital atlas. Intentionally no hero photograph:
+   structured grid, diffuse indigo lighting and architectural glass geometry. */
+.pkg-hero:after{
+ content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+ background:
+  radial-gradient(ellipse 45% 73% at 76% 53%,rgba(94,84,216,.20),transparent 73%),
+  radial-gradient(ellipse 35% 32% at 99% 3%,rgba(96,143,231,.15),transparent 84%),
+  linear-gradient(153deg,transparent 54%,rgba(191,164,255,.065) 57%,transparent 63%);
+}
+.pkg-hero-art:after{
+ content:"";position:absolute;z-index:-1;pointer-events:none;
+ top:-8%;bottom:-8%;left:36%;right:17%;
+ transform:skew(-16deg);
+ background:linear-gradient(105deg,rgba(187,166,251,.05),rgba(175,159,255,.012) 53%,rgba(114,156,240,.065));
+ border-left:1px solid rgba(199,177,255,.13);
+ border-right:1px solid rgba(145,174,255,.075);
+}
+.pkg-orbit-one{
+ border-color:rgba(178,174,250,.20);
+ box-shadow:0 0 0 40px rgba(152,132,251,.014),0 0 0 95px rgba(134,139,239,.008);
+}
+.pkg-orbit-two{border-color:rgba(156,182,255,.22)}
+@media(max-width:800px){
+ .pkg-hero:before{
+   opacity:.28;
+   -webkit-mask-image:linear-gradient(180deg,transparent 5%,#000 45%);
+   mask-image:linear-gradient(180deg,transparent 5%,#000 45%);
+ }
+ .pkg-hero-art:after{left:30%;right:23%}
 }
