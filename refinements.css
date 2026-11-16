@@ -1311,3 +1311,12 @@ body{font-family:'DM Sans',Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Ari
   .tvx-card{min-height:187px}
   .tvx-card .tvx-card-main{padding:14px 19px}
 }
+
+
+/* V29 — slightly higher floating chat launcher; preserve CTA alignment and styling. */
+.fsn-chat-root{
+  bottom:clamp(48px,5.8vh,68px);
+}
+@media(max-width:560px){
+  .fsn-chat-root{bottom:max(36px,env(safe-area-inset-bottom))}
+}
