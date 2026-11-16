@@ -1249,3 +1249,18 @@ body{font-family:'DM Sans',Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Ari
 }
 .fsn-chat-toggle-bubble svg{stroke:#5425b1}
 .fsn-chat-toggle:focus-visible{outline-color:#9c78e3}
+
+
+/* V22 — new cinematic Cablevision+ photograph, retaining premium split layout. */
+.cablevision-premium .cablevision-image img{
+  object-position:56% center;
+  filter:brightness(.81) saturate(.94) contrast(1.06);
+}
+.cablevision-premium .cablevision-image::after{
+  background:
+    linear-gradient(90deg,rgba(21,20,62,.63) 0%,rgba(21,20,62,.17) 23%,transparent 48%),
+    linear-gradient(0deg,rgba(19,15,57,.26),transparent 37%,transparent 75%,rgba(17,16,55,.07));
+}
+@media(max-width:940px){
+  .cablevision-premium .cablevision-image img{object-position:center 50%}
+}
