@@ -1582,3 +1582,23 @@ button.btn,
 .cablevision-premium .cablevision-actions .btn {
   border-radius:999px;
 }
+
+
+/* V34 — Hide the support launcher under the footer, fade it back in above. */
+.fsn-chat-root{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+  transition:opacity .22s ease,transform .22s ease,visibility 0s linear 0s;
+}
+.fsn-chat-root.fsn-chat-under-footer{
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(24px);
+  pointer-events:none;
+  transition:opacity .22s ease,transform .22s ease,visibility 0s linear .22s;
+}
+@media(prefers-reduced-motion:reduce){
+  .fsn-chat-root,
+  .fsn-chat-root.fsn-chat-under-footer{transition:none!important}
+}

@@ -73,6 +73,39 @@
       setOpen(false,true);
     }
   });
+
+  /* V34 — Hide the support launcher under the footer on all pages.
+     Detect the actual launcher/footer overlap, not an arbitrary scroll depth,
+     so this works with different viewport sizes and footer layouts. */
+  const footer=document.querySelector('footer.footer');
+  if(footer){
+    let scheduled=false;
+    const updateFooterVisibility=()=>{
+      scheduled=false;
+      const buttonBounds=toggle.getBoundingClientRect();
+      const footerBounds=footer.getBoundingClientRect();
+      const overlap=footerBounds.top<=buttonBounds.bottom+12&&footerBounds.bottom>0;
+      const wasHidden=root.classList.contains('fsn-chat-under-footer');
+      if(overlap===wasHidden)return;
+      if(overlap){
+        if(isOpen)setOpen(false);
+        if(root.contains(document.activeElement))document.activeElement.blur();
+      }
+      root.classList.toggle('fsn-chat-under-footer',overlap);
+    };
+    const queueFooterCheck=()=>{
+      if(scheduled)return;
+      scheduled=true;
+      requestAnimationFrame(updateFooterVisibility);
+    };
+    window.addEventListener('scroll',queueFooterCheck,{passive:true});
+    window.addEventListener('resize',queueFooterCheck,{passive:true});
+    window.addEventListener('pageshow',queueFooterCheck);
+    if('ResizeObserver' in window){
+      new ResizeObserver(queueFooterCheck).observe(footer);
+    }
+    queueFooterCheck();
+  }
 })();
 
 
