@@ -75,3 +75,13 @@
 @media(max-width:560px){.pkg-hero-layout{padding-top:53px;padding-bottom:51px}.pkg-hero h1{font-size:clamp(2.9rem,11vw,3.7rem)}.pkg-hero-copy>p{font-size:.9rem}.pkg-hero-buttons a{width:100%;justify-content:space-between}.pkg-hero-art{height:213px}.pkg-glass{min-width:135px;padding:13px 15px;border-radius:14px}.pkg-glass strong{font-size:1.68rem}.pkg-glass span{font-size:.53rem}.pkg-glass>small{font-size:.65rem}.pkg-glass-a{left:0}.pkg-glass-b{right:0}.pkg-pricing{padding-top:48px;padding-bottom:60px}.pkg-pricing-heading h2{font-size:2.35rem}.pkg-jump{gap:6px;margin-bottom:29px}.pkg-jump a{font-size:.69rem;padding:9px 10px}.pkg-jump small{font-size:.58rem}.pkg-group-heading h3{font-size:1.37rem}.pkg-group-heading b{font-size:.55rem}.pkg-grid{gap:10px}.pkg-plan{padding:16px 12px 13px;min-height:223px;border-radius:14px}.pkg-plan-top{font-size:.48rem;letter-spacing:0}.pkg-plan-speed strong{font-size:2.7rem}.pkg-plan-quota{font-size:.59rem}.pkg-plan-bottom{padding-top:14px;gap:11px}.pkg-plan-price strong{font-size:1.5rem}.pkg-plan-link{font-size:.68rem;padding:9px 11px;min-height:39px}.pkg-terms .terms-grid{grid-template-columns:1fr}}
 @media(max-width:370px){.pkg-grid{grid-template-columns:1fr}.pkg-plan{min-height:194px}}
 @media(prefers-reduced-motion:reduce){.pkg-plan{transition:none!important}.pkg-plan:hover{transform:none!important}}
+
+
+/* V27 — full-screen Packages hero: subtract the actual announcement bar and
+   navigation heights so no white strip peeks out at the bottom of the viewport. */
+@media (min-width:801px){
+  .pkg-hero{
+    min-height:calc(100vh - var(--pkg-header-stack,134px));
+    min-height:calc(100svh - var(--pkg-header-stack,134px));
+  }
+}
