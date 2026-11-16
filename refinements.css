@@ -1557,3 +1557,29 @@ body{font-family:'DM Sans',Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Ari
   .wide-cta.cta-premium .cta-premium-button:hover,
   .cta-premium-button:hover .arrow{transform:none!important}
 }
+
+
+/* V33 — site-wide action button radius consistency.
+   Covers every .btn CTA on Home, Packages and Contact (including the WhatsApp
+   footer/contact banner and contact form). Decorative cards, inputs, menus,
+   dropdowns and icon-only controls retain their own geometry. */
+.btn,
+a.btn,
+button.btn,
+.contact-banner .btn,
+.contact-inline .btn,
+.form-card .btn {
+  border-radius:999px;
+}
+
+/* Other interactive CTAs were already pill-shaped; explicitly keep them in
+   the same design language even when feature-specific styles are rearranged. */
+.advantage-button,
+.tvx-card-link,
+.speed-premium-action,
+.cta-premium-button,
+.fsn-chat-toggle,
+.fsn-chat-main,
+.cablevision-premium .cablevision-actions .btn {
+  border-radius:999px;
+}
