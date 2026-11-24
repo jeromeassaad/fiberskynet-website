@@ -13,7 +13,7 @@ out = root / 'dist'
 if out.exists():
     shutil.rmtree(out)
 out.mkdir()
-for name in ('index.html', 'styles.css', 'refinements.css', 'script.js', 'assets'):
+for name in ('index.html', 'styles.css', 'refinements.css', 'script.js', 'assets', 'geofeed.csv'):
     source = root / name
     dest = out / name
     if source.is_dir():
